@@ -17,6 +17,7 @@ function App() {
 
     return (
         <div className="app">
+            <h1>TBC Season 4 Arena Points Calculator</h1>
             <div className="calculator">
                 <form onSubmit={getPoints}>
                     <label>
@@ -39,6 +40,12 @@ function App() {
                     )}
                 </p>
             </div>
+            <aside>
+                <em>
+                    Special thanks to <a href="https://www.reddit.com/user/Finalbelle">Finalbelle</a> on Reddit for the calculations.<br/>
+                    <a href="https://www.reddit.com/r/classicwow/comments/us1cg5/tbc_arena_calculator_formula_updated_for_s4/">Original post can be found here</a>.
+                </em>
+            </aside>
         </div>
     );
 }

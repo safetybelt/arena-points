@@ -17,3 +17,12 @@ code {
 p {
   margin: 0;
 }
+
+a {
+  color: #01b0d3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

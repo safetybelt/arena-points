@@ -2,7 +2,7 @@
 //  https://www.reddit.com/r/classicwow/comments/us1cg5/tbc_arena_calculator_formula_updated_for_s4/
 export const calculatePoints = (rating, bracket = 5) => {
     // calculations are not accurate for < 150, return null and handle on UI
-    if (rating <= 150) {
+    if (!rating || rating <= 150) {
         return null;
     }
     const exp = -0.00412 * rating;
