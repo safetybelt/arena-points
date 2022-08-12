@@ -11,12 +11,6 @@
     margin-bottom: 4rem;
 }
 
-.app .calculator {
-    width: 20rem;
-    border: 1px solid #01b0d3;
-    padding: 2rem;
-}
-
 .app aside {
     font-size: 1rem;
     margin-top: 2rem;
@@ -48,5 +42,25 @@
 }
 
 .app button:hover {
+    background-color: #015869;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.app nav ul li button {
+    background-color: transparent;
+    font-size: 1.25rem;
+    border: 1px solid #01b0d3;
+    border-radius: 0;
+}
+
+.app nav ul li button.current {
     background-color: #015869;
 }

@@ -1,44 +1,28 @@
 import { useState } from 'react';
 import './app.css';
-import { calculatePoints } from './utils';
+import { RatingToPoints, PointsToRating } from './components';
 
 function App() {
-    const [rating, setRating] = useState(0);
-    const [bracket, setBracket] = useState(2);
-    const [points, setPoints] = useState(0);
-    const brackets = [2, 3, 5];
-
-    const getPoints = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setPoints(calculatePoints(rating, bracket));
-    }
+    const [calculator, setCalculator] = useState('rtp');
 
     return (
         <div className="app">
             <h1>TBC Season 4 Arena Points Calculator</h1>
-            <div className="calculator">
-                <form onSubmit={getPoints}>
-                    <label>
-                        Current rating:
-                        <input type="number" value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}></input>
-                    </label>
-                    <label>
-                        Bracket:
-                        <select name="bracket" onChange={(e) => setBracket(parseInt(e.target.value, 10))} value={bracket}>
-                            {brackets.map((b) => (
-                                <option key={b} value={b}>{b}s</option>
-                            ))}
-                        </select>
-                    </label>
-                    <button type="submit">Calculate</button>
-                </form>
-                <p>
-                    {points !== null ? `Points: ${points}` : (
-                        'Points calculation inaccurate under 150 rating, try improving your rating!'
-                    )}
-                </p>
-            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <button onClick={() => setCalculator('rtp')} className={calculator === 'rtp' ? 'current' : null}>
+                            Current Points
+                        </button>
+                    </li>
+                    <li>
+                        <button onClick={() => setCalculator('ptr')} className={calculator === 'ptr' ? 'current' : null}>
+                            Rating Needed
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            {calculator === 'rtp' ? <RatingToPoints /> : <PointsToRating />}
             <aside>
                 <em>
                     Special thanks to <a href="https://www.reddit.com/user/Finalbelle">Finalbelle</a> on Reddit for the calculations.<br/>

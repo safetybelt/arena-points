@@ -12,3 +12,15 @@ export const calculatePoints = (rating, bracket = 5) => {
     if (bracket === 3) { points *= 0.88; }
     return Math.round(points);
 };
+
+/*
+Rating = math.ceil((1/-0.00412)*(math.log((((1022/(DesiredPointsMod-580))-1)/123))/(math.log(2.71828))))
+
+Where DesiredPointsMod reverses the bracket by dividing the Desired Points by the bracket multiplier e.g for 2's (DesiredPoints/0.76), 3's is 0.88 and 5's is 1 (or no change)
+*/
+
+export const calculateRating = (points, bracket) => {
+    const mods = { 2: 0.76, 3: 0.88, 5: 1 };
+    const mod = points / mods[bracket];
+    return Math.ceil((1/-0.00412)*(Math.log((((1022/(mod-580))-1)/123))/(Math.log(2.71828))));
+}
