@@ -11,8 +11,7 @@ function App() {
     const getPoints = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log(rating, bracket);
-        setPoints(calculatePoints(parseInt(rating, 10), parseInt(bracket, 10)));
+        setPoints(calculatePoints(rating, bracket));
     }
 
     return (
@@ -22,11 +21,11 @@ function App() {
                 <form onSubmit={getPoints}>
                     <label>
                         Current rating:
-                        <input type="number" value={rating} onChange={(e) => setRating(e.target.value)}></input>
+                        <input type="number" value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}></input>
                     </label>
                     <label>
                         Bracket:
-                        <select name="bracket" onChange={(e) => console.log(e) || setBracket(e.target.value)} value={bracket}>
+                        <select name="bracket" onChange={(e) => setBracket(parseInt(e.target.value, 10))} value={bracket}>
                             {brackets.map((b) => (
                                 <option key={b} value={b}>{b}s</option>
                             ))}
@@ -46,6 +45,8 @@ function App() {
                     <a href="https://www.reddit.com/r/classicwow/comments/us1cg5/tbc_arena_calculator_formula_updated_for_s4/">Original post can be found here</a>.
                 </em>
             </aside>
+            <div>
+            </div>
         </div>
     );
 }
