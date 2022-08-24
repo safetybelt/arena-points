@@ -23,20 +23,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-.donation-wrapper > div {
-    margin-top: 2rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.donation-wrapper a {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
-    font-size: 1rem;
-    font-weight: normal;
-    min-width: unset;
-    height: unset;
-    padding: 0.5rem 1.5rem;
-}

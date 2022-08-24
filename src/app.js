@@ -29,7 +29,8 @@ function App() {
                     <a href="https://www.reddit.com/r/classicwow/comments/us1cg5/tbc_arena_calculator_formula_updated_for_s4/">Original post can be found here</a>.
                 </em>
             </aside>
-            <div>
+            <div className="buy-beer-wrapper">
+                <a href="http://buymeacoffee.com/safetybelt" className="as-btn">🍺 Buy me a beer</a>
             </div>
         </div>
     );

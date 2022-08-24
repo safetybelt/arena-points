@@ -13,7 +13,7 @@
 
 .app aside {
     font-size: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
     opacity: 0.75;
 }
 
@@ -31,7 +31,7 @@
     width: 5rem;
 }
 
-.app button {
+.app button, a.as-btn {
     border: none;
     background-color: #01b0d3;
     color: #fff;
@@ -41,7 +41,11 @@
     cursor: pointer;
 }
 
-.app button:hover {
+a.as-btn:hover {
+    text-decoration: none;
+}
+
+.app button:hover, a.as-btn:hover {
     background-color: #015869;
 }
 
@@ -63,4 +67,8 @@ nav ul {
 
 .app nav ul li button.current {
     background-color: #015869;
+}
+
+.app .buy-beer-wrapper a {
+    font-size: 1rem;
 }
