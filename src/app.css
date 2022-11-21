@@ -13,8 +13,13 @@
 
 .app aside {
     font-size: 1rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
     opacity: 0.75;
+    max-width: 30rem;
+}
+
+.app aside p {
+    margin: 1rem 0;
 }
 
 .app form {
